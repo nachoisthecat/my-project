@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b7 100%);
+    min-height: 100vh;
+    color: #2c1810;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #8b4513;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #6b4423;
+    margin-bottom: 30px;
+}
+
+/* 메인 페이지 스타일 */
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.animal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.animal-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.animal-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.animal-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8b4513;
+    margin-bottom: 8px;
+}
+
+.animal-brief {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* 모달 스타일 */
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    animation: fadeInBackdrop 0.3s ease-in;
+    backdrop-filter: blur(5px);
+}
+
+.modal-backdrop.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@keyframes fadeInBackdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: slideInModal 0.4s ease-out;
+    transform-origin: center;
+}
+
+@keyframes slideInModal {
+    from { 
+        opacity: 0; 
+        transform: scale(0.7) translateY(-50px);
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0);
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #8b4513;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-button:hover {
+    background: #f0f0f0;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.modal-info {
+    padding: 10px;
+}
+
+.modal-title {
+    font-size: 2.2em;
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-description {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+.characteristics {
+    margin-top: 20px;
+}
+
+.characteristics h3 {
+    color: #8b4513;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e8d5b7;
+    padding-bottom: 5px;
+}
+
+.characteristics ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.characteristics li {
+    background: #f9f6f1;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #8b4513;
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .modal-image {
+        height: 250px;
+    }
+    
+    .modal-title {
+        font-size: 1.8em;
+    }
+    
+    .animals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .modal-content {
+        margin: 10px;
+        max-height: 95vh;
+    }
+}

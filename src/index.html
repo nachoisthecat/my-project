@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세렝게티 빅5</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 메인 페이지 -->
+        <header>
+            <h1>🦁 세렝게티 빅5 🐘</h1>
+            <p class="subtitle">아프리카 세렝게티의 가장 위대한 5대 동물을 만나보세요</p>
+        </header>
+
+       <iframe width="100%" height="480" src="https://www.youtube.com/embed/uixfXt2M-xs?si=QNhg39rpc-5BBKuO?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="animals-grid">
+            <div class="animal-card" data-animal="lion">
+                <div class="animal-image" style="background-image: url('https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=400&h=300&fit=crop')"></div>
+                <div class="animal-info">
+                    <div class="animal-name">사자 (Lion)</div>
+                    <div class="animal-brief">아프리카의 왕, 사바나의 최강자</div>
+                </div>
+            </div>
+
+            <div class="animal-card" data-animal="elephant">
+                <div class="animal-image" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=400&h=300&fit=crop')"></div>
+                <div class="animal-info">
+                    <div class="animal-name">코끼리 (Elephant)</div>
+                    <div class="animal-brief">거대한 지혜의 상징, 아프리카의 거인</div>
+                </div>
+            </div>
+
+            <div class="animal-card" data-animal="buffalo">
+                <div class="animal-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mSAfpZR60aPSIkmzj5uCSirIQyirxhnip5a7eB5pRYx5r1KcZEyrauG5EPSnvzkzcBGKJ8Zl18FAn_Ph0MI9Im9qnH53o3zA2pNRzw')"></div>
+                <div class="animal-info">
+                    <div class="animal-name">아프리카물소 (Buffalo)</div>
+                    <div class="animal-brief">험악한 성격의 거대한 초식동물</div>
+                </div>
+            </div>
+
+            <div class="animal-card" data-animal="leopard">
+                <div class="animal-image" style="background-image: url('https://img.freepik.com/premium-photo/leopard-serengeti-national-reserve_191971-10972.jpg')"></div>
+                <div class="animal-info">
+                    <div class="animal-name">표범 (Leopard)</div>
+                    <div class="animal-brief">은밀한 밤의 사냥꾼, 아름다운 점무늬</div>
+                </div>
+            </div>
+
+            <div class="animal-card" data-animal="rhino">
+                <div class="animal-image" style="background-image: url('https://i.namu.wiki/i/OLElTiPbdffslVP_eMW-IS80McrPDpqJ5P6QmUM33AWAibgvOKYCONVfAuQS7LIxETD9I-qvwkEXNzqj9RD5kA.webp')"></div>
+                <div class="animal-info">
+                    <div class="animal-name">코뿔소 (Rhino)</div>
+                    <div class="animal-brief">선사시대부터 이어온 거대한 뿔의 소유자</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 배경 -->
+    <div id="modal-backdrop" class="modal-backdrop" onclick="closeModal()">
+        <!-- 모달 창 -->
+        <div id="modal-content" class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-button" onclick="closeModal()">✕</button>
+            
+            <div class="modal-body">
+                <div id="modal-image" class="modal-image"></div>
+                <div class="modal-info">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-description" class="modal-description"></p>
+                    <div class="characteristics">
+                        <h3>주요 특징</h3>
+                        <ul id="modal-characteristics"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
